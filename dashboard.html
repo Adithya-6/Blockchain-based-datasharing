@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial;
+            background: #0f172a;
+            color: white;
+            padding: 20px;
+        }
+        input, button {
+            padding: 10px;
+            margin: 10px;
+        }
+        .block {
+            background: #1e293b;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>📊 Dashboard</h2>
+
+<form method="POST" enctype="multipart/form-data">
+    <input type="file" name="file">
+    <button>Upload File</button>
+</form>
+
+<a href="/verify" style="color:white;">🔐 Verify File</a>
+
+<h3>🔗 Blockchain:</h3>
+
+{% for block in chain %}
+<div class="block">
+    <p><b>Index:</b> {{ block.index }}</p>
+    <p><b>Timestamp:</b> {{ block.timestamp }}</p>
+    <p><b>Data (Hash):</b> {{ block.data }}</p>
+    <p><b>Previous Hash:</b> {{ block.previous_hash }}</p>
+</div>
+{% endfor %}
+
+</body>
+</html>

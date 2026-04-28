@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background: #0f172a;
+            color: white;
+            text-align: center;
+            font-family: Arial;
+            padding-top: 100px;
+        }
+        input, button {
+            padding: 10px;
+            margin: 10px;
+        }
+        .result {
+            font-size: 20px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>🔐 Verify File Integrity</h2>
+
+<form method="POST" enctype="multipart/form-data">
+    <input type="file" name="file">
+    <button>Verify</button>
+</form>
+
+{% if result %}
+<div class="result">
+    {{ result }}
+</div>
+{% endif %}
+
+<br>
+<a href="/dashboard" style="color:white;">⬅ Back</a>
+
+</body>
+</html>
